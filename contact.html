@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Kokan Educational Society - Get in Touch">
+    <meta name="keywords" content="KES, Contact, School Contact, Address, Phone">
+    <title>Contact Us - Kokan Educational Society</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #4FC3F7, #0288D1, #F06292); display: flex; align-items: center; justify-content: center; z-index: 99999;">
+        <div style="text-align: center;">
+            <img src="images/logo.png" alt="KES Logo" style="height: 100px; animation: bounce 2s ease infinite;">
+            <div style="margin-top: 20px;">
+                <div class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="images/logo.png" alt="KES Logo">
+                <span>KES</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">
+                            <i class="fas fa-user-graduate me-1"></i>Admissions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">
+                            <i class="fas fa-images me-1"></i>Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="handleLogout()">
+                            <i class="fas fa-sign-out-alt me-1"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: 150px 0 100px;">
+        <div class="container text-center hero-content">
+            <h1 class="display-4 fw-bold mb-3">Get in Touch</h1>
+            <p class="lead">We'd love to hear from you. Reach out to us anytime!</p>
+        </div>
+    </section>
+
+    <!-- Contact Information Cards -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h5 class="card-title">Visit Us</h5>
+                            <p class="card-text">Kokan, Maharashtra<br>India - 416001</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h5 class="card-title">Call Us</h5>
+                            <p class="card-text">+91 1234567890<br>+91 0987654321</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h5 class="card-title">Email Us</h5>
+                            <p class="card-text">info@kes.edu<br>admissions@kes.edu</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h5 class="card-title">Office Hours</h5>
+                            <p class="card-text">Mon-Sat<br>8:00 AM - 4:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Map -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Contact Form -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body p-4">
+                            <h3 class="text-blue mb-4">
+                                <i class="fas fa-paper-plane me-2"></i>Send us a Message
+                            </h3>
+                            
+                            <form id="contactForm" onsubmit="return handleContactForm(event)">
+                                <div class="mb-3">
+                                    <label for="contactName" class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control" id="contactName" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactEmail" class="form-label">Email Address *</label>
+                                    <input type="email" class="form-control" id="contactEmail" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="contactPhone" pattern="[0-9]{10}">
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactSubject" class="form-label">Subject *</label>
+                                    <select class="form-control" id="contactSubject" required>
+                                        <option value="">Select Subject</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                        <option value="Admission Query">Admission Query</option>
+                                        <option value="Fee Information">Fee Information</option>
+                                        <option value="Campus Visit">Campus Visit</option>
+                                        <option value="Complaints">Complaints</option>
+                                        <option value="Suggestions">Suggestions</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label">Message *</label>
+                                    <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-custom w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map & Additional Info -->
+                <div class="col-lg-6 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body p-4">
+                            <h3 class="text-pink mb-4">
+                                <i class="fas fa-map-marked-alt me-2"></i>Find Us
+                            </h3>
+                            
+                            <!-- Google Map Embed -->
+                            <div class="mb-4" style="border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.15);">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.3160355472!2d72.74109995709658!3d19.082502004761544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1699880000000!5m2!1sen!2sin" 
+                                    width="100%" 
+                                    height="300" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+                            
+                            <!-- Quick Contact Info -->
+                            <div class="mb-3">
+                                <h5 class="text-blue mb-3">Quick Contact</h5>
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fas fa-map-marker-alt text-pink me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Address:</strong><br>
+                                        Kokan Educational Society,<br>
+                                        Kokan, Maharashtra, India - 416001
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fas fa-phone text-blue me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Phone:</strong><br>
+                                        +91 1234567890, +91 0987654321
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start mb-2">
+                                    <i class="fas fa-envelope text-pink me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Email:</strong><br>
+                                        info@kes.edu, admissions@kes.edu
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Social Media Links -->
+                            <div class="mt-4">
+                                <h5 class="text-pink mb-3">Connect With Us</h5>
+                                <div class="social-icons" style="font-size: 1.5rem;">
+                                    <a href="#" class="me-3" style="color: var(--primary-blue);" data-bs-toggle="tooltip" title="Facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="me-3" style="color: var(--primary-pink);" data-bs-toggle="tooltip" title="Instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="me-3" style="color: var(--primary-blue);" data-bs-toggle="tooltip" title="Twitter">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="me-3" style="color: var(--primary-pink);" data-bs-toggle="tooltip" title="LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" style="color: var(--primary-blue);" data-bs-toggle="tooltip" title="YouTube">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Department Contacts -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Department Contacts</h2>
+                <p class="section-subtitle">Reach out to specific departments for targeted assistance</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-blue mb-2">Principal's Office</h5>
+                                    <p class="mb-1"><i class="fas fa-phone text-pink me-2"></i>+91 1234567890</p>
+                                    <p class="mb-0"><i class="fas fa-envelope text-blue me-2"></i>principal@kes.edu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-pink mb-2">Admissions Office</h5>
+                                    <p class="mb-1"><i class="fas fa-phone text-pink me-2"></i>+91 1234567891</p>
+                                    <p class="mb-0"><i class="fas fa-envelope text-blue me-2"></i>admissions@kes.edu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-blue mb-2">Academic Office</h5>
+                                    <p class="mb-1"><i class="fas fa-phone text-pink me-2"></i>+91 1234567892</p>
+                                    <p class="mb-0"><i class="fas fa-envelope text-blue me-2"></i>academic@kes.edu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-rupee-sign"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-pink mb-2">Accounts Office</h5>
+                                    <p class="mb-1"><i class="fas fa-phone text-pink me-2"></i>+91 1234567893</p>
+                                    <p class="mb-0"><i class="fas fa-envelope text-blue me-2"></i>accounts@kes.edu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-bus"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-blue mb-2">Transport Office</h5>
+                                    <p class="mb-1"><i class="fas fa-phone text-pink me-2"></i>+91 1234567894</p>
+                                    <p class="mb-0"><i class="fas fa-envelope text-blue me-2"></i>transport@kes.edu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-laptop"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-pink mb-2">IT Support</h5>
+                                    <p class="mb-1"><i class="fas fa-phone text-pink me-2"></i>+91 1234567895</p>
+                                    <p class="mb-0"><i class="fas fa-envelope text-blue me-2"></i>itsupport@kes.edu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Quick answers to common questions</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="contactFAQ">
+                        <div class="accordion-item mb-3 border-0 shadow">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <i class="fas fa-question-circle text-blue me-2"></i> How can I schedule a campus visit?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">
+                                    You can schedule a campus visit by calling our admissions office at +91 1234567891 or by filling out the contact form above. We're happy to show you around Monday through Saturday.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    <i class="fas fa-question-circle text-pink me-2"></i> What documents do I need for admission?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">
+                                    Please refer to our Admissions page for a complete list of required documents. You can also contact our admissions office for personalized guidance.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    <i class="fas fa-question-circle text-blue me-2"></i> How do I check my application status?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">
+                                    After submitting your application, you'll receive a confirmation email with instructions on how to track your application status online. You can also call the admissions office for updates.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    <i class="fas fa-question-circle text-pink me-2"></i> Do you offer transportation services?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#contactFAQ">
+                                <div class="accordion-body">
+                                    Yes, we offer GPS-enabled bus services covering all major areas. Contact our transport office at +91 1234567894 for route information and fees.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h3 class="text-blue mb-3">Ready to Join KES?</h3>
+                    <p class="lead mb-0">Start your admission process today and give your child the best education</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="admissions.html" class="btn btn-custom btn-lg">
+                        <i class="fas fa-graduation-cap me-2"></i>Apply Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>About KES</h5>
+                    <p>Kokan Educational Society is committed to providing quality education and nurturing young minds to become responsible global citizens.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" data-bs-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="admissions.html">Admissions</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Programs</h5>
+                    <a href="#">Pre-Primary</a>
+                    <a href="#">Primary School</a>
+                    <a href="#">Secondary School</a>
+                    <a href="#">Higher Secondary</a>
+                    <a href="#">Extracurricular</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Kokan, Maharashtra, India</p>
+                    <p><i class="fas fa-phone me-2"></i>+91 1234567890</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@kes.edu</p>
+                    <p><i class="fas fa-clock me-2"></i>Mon-Sat: 8AM-4PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kokan Educational Society. All Rights Reserved. | <a href="#" style="color: white;">Privacy Policy</a> | <a href="#" style="color: white;">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

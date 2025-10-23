@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Kokan Educational Society - Our Mission, Vision, and Values">
+    <meta name="keywords" content="KES, About Us, School History, Mission, Vision">
+    <title>About Us - Kokan Educational Society</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #4FC3F7, #0288D1, #F06292); display: flex; align-items: center; justify-content: center; z-index: 99999;">
+        <div style="text-align: center;">
+            <img src="images/logo.png" alt="KES Logo" style="height: 100px; animation: bounce 2s ease infinite;">
+            <div style="margin-top: 20px;">
+                <div class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="images/logo.png" alt="KES Logo">
+                <span>KES</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">
+                            <i class="fas fa-user-graduate me-1"></i>Admissions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">
+                            <i class="fas fa-images me-1"></i>Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="handleLogout()">
+                            <i class="fas fa-sign-out-alt me-1"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: 150px 0 100px;">
+        <div class="container text-center hero-content">
+            <h1 class="display-4 fw-bold mb-3">About KES</h1>
+            <p class="lead">Learn more about our journey, mission, and commitment to excellence</p>
+        </div>
+    </section>
+
+    <!-- About Introduction -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 slide-in-left">
+                    <img src="images/logo.png" alt="About KES" class="img-fluid rounded shadow-3d">
+                </div>
+                <div class="col-lg-6 slide-in-right">
+                    <h2 class="section-title text-start mb-4">Welcome to Kokan Educational Society</h2>
+                    <p class="lead mb-3">Since 1999, we have been dedicated to providing quality education and shaping future leaders.</p>
+                    <p>Kokan Educational Society (KES) was established with a vision to provide world-class education to students in the Kokan region. Over the past 25 years, we have grown from a small school to a comprehensive educational institution serving thousands of students.</p>
+                    <p>Our commitment to academic excellence, character development, and holistic growth has made us a trusted name in education. We believe in nurturing not just students, but future leaders who will make a positive impact on society.</p>
+                    <div class="mt-4">
+                        <a href="admissions.html" class="btn btn-custom me-2 mb-2">
+                            <i class="fas fa-graduation-cap me-2"></i>Apply Now
+                        </a>
+                        <a href="contact.html" class="btn btn-pink mb-2">
+                            <i class="fas fa-phone me-2"></i>Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="card-title">Our Mission</h3>
+                            <p class="card-text">To provide quality education that empowers students with knowledge, skills, and values to excel in life and contribute meaningfully to society.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="card-title">Our Vision</h3>
+                            <p class="card-text">To be a leading educational institution recognized for academic excellence, innovative teaching methodologies, and holistic student development.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <div class="card-3d h-100">
+                        <div class="card-body text-center">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="card-title">Our Values</h3>
+                            <p class="card-text">Integrity, Excellence, Respect, Innovation, Collaboration, and Compassion form the foundation of everything we do at KES.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our History Timeline -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-subtitle">Milestones that shaped our institution</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-flag"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-blue mb-2">1999 - Foundation</h5>
+                                    <p class="mb-0">Kokan Educational Society was established with just 50 students and a vision to transform education in the region.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-pink mb-2">2005 - New Campus</h5>
+                                    <p class="mb-0">Expanded to a new state-of-the-art campus with modern facilities including science labs, computer labs, and sports complex.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-blue mb-2">2010 - National Recognition</h5>
+                                    <p class="mb-0">Received national recognition for academic excellence and innovative teaching methodologies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-laptop"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-pink mb-2">2015 - Digital Transformation</h5>
+                                    <p class="mb-0">Implemented smart classrooms and digital learning platforms to enhance the educational experience.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-blue mb-2">2020 - 5000+ Students</h5>
+                                    <p class="mb-0">Reached a milestone of serving over 5000 students with 250+ dedicated faculty members.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="card-3d">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-pink mb-2">2024 - Excellence Continues</h5>
+                                    <p class="mb-0">Celebrating 25 years of educational excellence and preparing for an even brighter future.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Facilities -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">World-Class Facilities</h2>
+                <p class="section-subtitle">Infrastructure designed for comprehensive learning</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-chalkboard-teacher fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                            <h5 class="card-title">Smart Classrooms</h5>
+                            <p class="card-text">Technology-enabled learning spaces</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-flask fa-3x mb-3" style="color: var(--primary-pink);"></i>
+                            <h5 class="card-title">Science Labs</h5>
+                            <p class="card-text">State-of-the-art laboratory facilities</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-book fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                            <h5 class="card-title">Library</h5>
+                            <p class="card-text">Extensive collection of books</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-basketball-ball fa-3x mb-3" style="color: var(--primary-pink);"></i>
+                            <h5 class="card-title">Sports Complex</h5>
+                            <p class="card-text">Indoor & outdoor sports facilities</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-music fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                            <h5 class="card-title">Music & Arts</h5>
+                            <p class="card-text">Creative expression studios</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-utensils fa-3x mb-3" style="color: var(--primary-pink);"></i>
+                            <h5 class="card-title">Cafeteria</h5>
+                            <p class="card-text">Hygienic food & beverages</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-bus fa-3x mb-3" style="color: var(--primary-blue);"></i>
+                            <h5 class="card-title">Transport</h5>
+                            <p class="card-text">Safe GPS-enabled buses</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center h-100">
+                        <div class="card-body">
+                            <i class="fas fa-heartbeat fa-3x mb-3" style="color: var(--primary-pink);"></i>
+                            <h5 class="card-title">Medical Care</h5>
+                            <p class="card-text">On-campus health facilities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Leadership</h2>
+                <p class="section-subtitle">Meet the team driving our vision forward</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <h5 class="card-title">Dr. Rajesh Sharma</h5>
+                            <p class="text-pink fw-bold mb-2">Principal</p>
+                            <p class="card-text small">Ph.D. in Education, 30+ years experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h5 class="card-title">Prof. Priya Desai</h5>
+                            <p class="text-blue fw-bold mb-2">Vice Principal</p>
+                            <p class="card-text small">M.Ed., 25+ years experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-user-cog"></i>
+                            </div>
+                            <h5 class="card-title">Mr. Amit Patil</h5>
+                            <p class="text-pink fw-bold mb-2">Academic Director</p>
+                            <p class="card-text small">M.A., 20+ years experience</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-user-shield"></i>
+                            </div>
+                            <h5 class="card-title">Ms. Sneha Kulkarni</h5>
+                            <p class="text-blue fw-bold mb-2">Admin Head</p>
+                            <p class="card-text small">MBA, 15+ years experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue), var(--primary-pink));">
+        <div class="container text-center text-white">
+            <h2 class="mb-4">Join Our Growing Family</h2>
+            <p class="lead mb-4">Experience the KES difference - Where education meets excellence</p>
+            <a href="admissions.html" class="btn btn-light btn-lg me-2 mb-2">
+                <i class="fas fa-file-alt me-2"></i>Apply Now
+            </a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg mb-2">
+                <i class="fas fa-calendar-check me-2"></i>Schedule Visit
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>About KES</h5>
+                    <p>Kokan Educational Society is committed to providing quality education and nurturing young minds to become responsible global citizens.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" data-bs-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="admissions.html">Admissions</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Programs</h5>
+                    <a href="#">Pre-Primary</a>
+                    <a href="#">Primary School</a>
+                    <a href="#">Secondary School</a>
+                    <a href="#">Higher Secondary</a>
+                    <a href="#">Extracurricular</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Kokan, Maharashtra, India</p>
+                    <p><i class="fas fa-phone me-2"></i>+91 1234567890</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@kes.edu</p>
+                    <p><i class="fas fa-clock me-2"></i>Mon-Sat: 8AM-4PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kokan Educational Society. All Rights Reserved. | <a href="#" style="color: white;">Privacy Policy</a> | <a href="#" style="color: white;">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

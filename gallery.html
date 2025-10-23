@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photo Gallery of Kokan Educational Society">
+    <meta name="keywords" content="KES, Gallery, School Photos, Events, Activities">
+    <title>Gallery - Kokan Educational Society</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #4FC3F7, #0288D1, #F06292); display: flex; align-items: center; justify-content: center; z-index: 99999;">
+        <div style="text-align: center;">
+            <img src="images/logo.png" alt="KES Logo" style="height: 100px; animation: bounce 2s ease infinite;">
+            <div style="margin-top: 20px;">
+                <div class="spinner-border text-light" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="images/logo.png" alt="KES Logo">
+                <span>KES</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admissions.html">
+                            <i class="fas fa-user-graduate me-1"></i>Admissions
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">
+                            <i class="fas fa-images me-1"></i>Gallery
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="handleLogout()">
+                            <i class="fas fa-sign-out-alt me-1"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="hero" style="padding: 150px 0 100px;">
+        <div class="container text-center hero-content">
+            <h1 class="display-4 fw-bold mb-3">Photo Gallery</h1>
+            <p class="lead">Capturing memories, celebrating achievements</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Explore Our Moments</h2>
+                <p class="section-subtitle">Browse through our collection of memorable events and activities</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="gallery-filter text-center mb-5">
+                <button class="btn btn-custom me-2 mb-2 active" data-filter="all">
+                    <i class="fas fa-th me-2"></i>All
+                </button>
+                <button class="btn btn-custom me-2 mb-2" data-filter="events">
+                    <i class="fas fa-calendar-alt me-2"></i>Events
+                </button>
+                <button class="btn btn-custom me-2 mb-2" data-filter="sports">
+                    <i class="fas fa-running me-2"></i>Sports
+                </button>
+                <button class="btn btn-custom me-2 mb-2" data-filter="academics">
+                    <i class="fas fa-book me-2"></i>Academics
+                </button>
+                <button class="btn btn-custom me-2 mb-2" data-filter="cultural">
+                    <i class="fas fa-music me-2"></i>Cultural
+                </button>
+                <button class="btn btn-custom me-2 mb-2" data-filter="infrastructure">
+                    <i class="fas fa-building me-2"></i>Infrastructure
+                </button>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="row" id="galleryGrid">
+                <!-- Events -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="events">
+                    <div style="position: relative; background: linear-gradient(135deg, #4FC3F7, #F06292); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-graduation-cap fa-4x mb-3"></i>
+                            <h5>Annual Day Celebration</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="events">
+                    <div style="position: relative; background: linear-gradient(135deg, #F06292, #4FC3F7); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-trophy fa-4x mb-3"></i>
+                            <h5>Prize Distribution</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="events">
+                    <div style="position: relative; background: linear-gradient(135deg, #0288D1, #F06292); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-flag-checkered fa-4x mb-3"></i>
+                            <h5>Independence Day</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Sports -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="sports">
+                    <div style="position: relative; background: linear-gradient(135deg, #4FC3F7, #0288D1); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-basketball-ball fa-4x mb-3"></i>
+                            <h5>Basketball Tournament</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="sports">
+                    <div style="position: relative; background: linear-gradient(135deg, #F06292, #0288D1); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-futbol fa-4x mb-3"></i>
+                            <h5>Football Championship</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="sports">
+                    <div style="position: relative; background: linear-gradient(135deg, #0288D1, #4FC3F7); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-running fa-4x mb-3"></i>
+                            <h5>Sports Day</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Academics -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="academics">
+                    <div style="position: relative; background: linear-gradient(135deg, #F06292, #4FC3F7); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-flask fa-4x mb-3"></i>
+                            <h5>Science Exhibition</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="academics">
+                    <div style="position: relative; background: linear-gradient(135deg, #4FC3F7, #F06292); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-chalkboard-teacher fa-4x mb-3"></i>
+                            <h5>Smart Classroom</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="academics">
+                    <div style="position: relative; background: linear-gradient(135deg, #0288D1, #F06292); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-book-reader fa-4x mb-3"></i>
+                            <h5>Library Session</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Cultural -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="cultural">
+                    <div style="position: relative; background: linear-gradient(135deg, #4FC3F7, #0288D1); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-music fa-4x mb-3"></i>
+                            <h5>Music Concert</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="cultural">
+                    <div style="position: relative; background: linear-gradient(135deg, #F06292, #4FC3F7); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-masks-theater fa-4x mb-3"></i>
+                            <h5>Drama Performance</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="cultural">
+                    <div style="position: relative; background: linear-gradient(135deg, #0288D1, #4FC3F7); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-palette fa-4x mb-3"></i>
+                            <h5>Art Exhibition</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="infrastructure">
+                    <div style="position: relative; background: linear-gradient(135deg, #4FC3F7, #F06292); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-building fa-4x mb-3"></i>
+                            <h5>School Campus</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="infrastructure">
+                    <div style="position: relative; background: linear-gradient(135deg, #F06292, #0288D1); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-laptop fa-4x mb-3"></i>
+                            <h5>Computer Lab</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="infrastructure">
+                    <div style="position: relative; background: linear-gradient(135deg, #0288D1, #F06292); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-volleyball-ball fa-4x mb-3"></i>
+                            <h5>Sports Complex</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <!-- More Events -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="events">
+                    <div style="position: relative; background: linear-gradient(135deg, #4FC3F7, #0288D1); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-gifts fa-4x mb-3"></i>
+                            <h5>Teachers' Day</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="cultural">
+                    <div style="position: relative; background: linear-gradient(135deg, #F06292, #4FC3F7); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-drum fa-4x mb-3"></i>
+                            <h5>Dance Competition</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="academics">
+                    <div style="position: relative; background: linear-gradient(135deg, #0288D1, #4FC3F7); height: 250px; display: flex; align-items: center; justify-content: center; border-radius: 15px;">
+                        <div style="text-align: center; color: white;">
+                            <i class="fas fa-microscope fa-4x mb-3"></i>
+                            <h5>Biology Lab</h5>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Video Gallery</h2>
+                <p class="section-subtitle">Watch our school in action</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div style="position: relative; padding-top: 56.25%; background: linear-gradient(135deg, #4FC3F7, #F06292); border-radius: 15px 15px 0 0;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+                                <i class="fas fa-play-circle fa-4x mb-2"></i>
+                                <p class="mb-0">Virtual Campus Tour</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Campus Tour 2024</h5>
+                            <p class="card-text">Take a virtual tour of our beautiful campus and modern facilities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div style="position: relative; padding-top: 56.25%; background: linear-gradient(135deg, #F06292, #0288D1); border-radius: 15px 15px 0 0;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+                                <i class="fas fa-play-circle fa-4x mb-2"></i>
+                                <p class="mb-0">Annual Day Highlights</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Annual Day 2023</h5>
+                            <p class="card-text">Watch the highlights from our spectacular annual day celebration.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card-3d">
+                        <div style="position: relative; padding-top: 56.25%; background: linear-gradient(135deg, #0288D1, #4FC3F7); border-radius: 15px 15px 0 0;">
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+                                <i class="fas fa-play-circle fa-4x mb-2"></i>
+                                <p class="mb-0">Sports Day Moments</p>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Sports Day 2023</h5>
+                            <p class="card-text">Experience the excitement and energy of our sports day event.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Achievements -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Student Achievements</h2>
+                <p class="section-subtitle">Celebrating excellence and success</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h5 class="card-title">National Winner</h5>
+                            <p class="card-text">Science Olympiad 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h5 class="card-title">State Champion</h5>
+                            <p class="card-text">Basketball Tournament</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h5 class="card-title">Best Project</h5>
+                            <p class="card-text">State Science Fair</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card-3d text-center">
+                        <div class="card-body">
+                            <div class="feature-icon mx-auto mb-3">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <h5 class="card-title">First Prize</h5>
+                            <p class="card-text">Inter-School Quiz</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue), var(--primary-pink));">
+        <div class="container text-center text-white">
+            <h2 class="mb-4">Be Part of Our Story</h2>
+            <p class="lead mb-4">Join us and create your own memorable moments</p>
+            <a href="admissions.html" class="btn btn-light btn-lg me-2 mb-2">
+                <i class="fas fa-graduation-cap me-2"></i>Apply Now
+            </a>
+            <a href="contact.html" class="btn btn-outline-light btn-lg mb-2">
+                <i class="fas fa-calendar-check me-2"></i>Schedule Visit
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>About KES</h5>
+                    <p>Kokan Educational Society is committed to providing quality education and nurturing young minds to become responsible global citizens.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" data-bs-toggle="tooltip" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" data-bs-toggle="tooltip" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <a href="home.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="admissions.html">Admissions</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Programs</h5>
+                    <a href="#">Pre-Primary</a>
+                    <a href="#">Primary School</a>
+                    <a href="#">Secondary School</a>
+                    <a href="#">Higher Secondary</a>
+                    <a href="#">Extracurricular</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Kokan, Maharashtra, India</p>
+                    <p><i class="fas fa-phone me-2"></i>+91 1234567890</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@kes.edu</p>
+                    <p><i class="fas fa-clock me-2"></i>Mon-Sat: 8AM-4PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kokan Educational Society. All Rights Reserved. | <a href="#" style="color: white;">Privacy Policy</a> | <a href="#" style="color: white;">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Additional gallery-specific enhancements
+        $(document).ready(function() {
+            // Add lightbox to video placeholders
+            $('.fa-play-circle').parent().parent().parent().css('cursor', 'pointer');
+            
+            // Smooth appearance of gallery items
+            $('.gallery-item').each(function(index) {
+                $(this).css({
+                    'opacity': '0',
+                    'transform': 'translateY(30px)'
+                });
+                
+                setTimeout(() => {
+                    $(this).css({
+                        'opacity': '1',
+                        'transform': 'translateY(0)',
+                        'transition': 'all 0.5s ease'
+                    });
+                }, index * 50);
+            });
+        });
+    </script>
+
+</body>
+</html>
